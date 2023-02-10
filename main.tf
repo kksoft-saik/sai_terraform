@@ -1,3 +1,47 @@
+variable "aurora_max_capacity" {
+  type = number
+}
+
+variable "aurora_min_capacity" {
+  type = number
+}
+
+variable "aurora_master_password" {
+  type = string
+}
+
+variable "server_instance_type" {
+  type = string
+}
+
+variable "server_instances" {
+  type = number
+}
+
+variable "jvm_heap_size" {
+  type = string
+}
+
+variable "jvm_metaspace_size" {
+  type = string
+}
+
+variable "prefix" {
+  type = string
+}
+
+variable "dns_prefix" {
+  type = string
+}
+
+variable "stack" {
+  type = string
+}
+
+variable "application" {
+  type = string
+}
+
  /*
 resource "aws_acm_certificate" "cert" {
   domain_name       = "sai.nlb.ca.pf.org"

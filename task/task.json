@@ -3,6 +3,14 @@
     "name": "nginx",
     "image": "nginx",
     "essential": true,
+    "environment": [
+      {"name": "spring.config.additional-location",
+       "value": "file:/etc/application.yaml"}
+    ],
+    "command": [
+      "/bin/bash -c ",
+      "echo 'izumo: \\n  dict: \\n    db: \\n      driver: com.mysql.jdbc.Driver\\n      url: jdbc:mysql://${log_env}:3306/izumo_dict?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&socketTimeout=60000&connectTimeout=3000&autoReconnect=true  \\n      username: izumo_dict\\n      password: izumo_dict_pass\\n    redis: \\n      mode: standalone\\n      host: 172.20.0.3\\n      timeout: 3000\\n' > /etc/application.yaml"
+    ],
     "portMappings": [
       {
         "containerPort": 80,
